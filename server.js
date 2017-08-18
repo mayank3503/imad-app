@@ -19,8 +19,8 @@ app.get('/article-three',function(req,res){
  res.send('Article one requested and will be served here');
 });
 app.get('/page-three ',function(req,res){
-    res.send('this is page three requested and ustice will be served  so page thrre wil be requested here this is new webapp nod server spo just shut up ')
-})
+    res.send('this is page three requested and ustice will be served  so page thrre wil be requested here this is new webapp nod server spo just shut up ');
+});
 
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
