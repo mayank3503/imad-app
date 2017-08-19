@@ -5,20 +5,52 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-var articleOne = {
-    title: 'Article One:Mayank Dobriyal',
-    heading:'Article One',
-    date:'18 August,2017',
-    content:` <p>
-                      this is Article One
-                  </p>
-                  <p>
-                      gulla chutiya hai gulla chutiya hai gulla chutiya hai gulla chutiya tha aur gulla chutiya rhega
-                  </p>
-                  <p>
-                      sab ke sab chutiye hai kaha bhadwo ke beech mai fas gya hun maisab ke sab chutiye hai kaha bhadwo ke beech mai fas gya hun maisab ke sab chutiye hai kaha bhadwo ke beech mai fas gya hun maisab ke sab chutiye hai kaha bhadwo ke beech mai fas gya hun maisab ke sab chutiye hai kaha bhadwo ke beech mai fas gya hun maisab ke sab chutiye hai kaha bhadwo ke beech mai fas gya hun maisab ke sab chutiye hai kaha bhadwo ke beech mai fas gya hun maisab ke sab chutiye hai kaha bhadwo ke beech mai fas gya hun mai'
-                   </p>
-            `,
+var articles = {
+    'article-one' : {
+        title: 'Article One:Mayank Dobriyal',
+        heading:'Article One',
+        date:'18 August,2017',
+        content:` <p>
+                          this is Article One
+                      </p>
+                      <p>
+                          gulla chutiya hai gulla chutiya hai gulla chutiya hai gulla chutiya tha aur gulla chutiya rhega
+                      </p>
+                      <p>
+                          sab ke sab chutiye hai kaha bhadwo ke beech mai fas gya hun maisab ke sab chutiye hai kaha bhadwo ke beech mai fas gya hun maisab ke sab chutiye hai kaha bhadwo ke beech mai fas gya hun maisab ke sab chutiye hai kaha bhadwo ke beech mai fas gya hun maisab ke sab chutiye hai kaha bhadwo ke beech mai fas gya hun maisab ke sab chutiye hai kaha bhadwo ke beech mai fas gya hun maisab ke sab chutiye hai kaha bhadwo ke beech mai fas gya hun maisab ke sab chutiye hai kaha bhadwo ke beech mai fas gya hun mai'
+                       </p>
+                `,
+    },
+    'article-two ': {
+        title: 'Article Two:Mayank Dobriyal',
+        heading:'Article Two',
+        date:'18 August,2017',
+        content:` <p>
+                          this is Article Two
+                      </p>
+                      <p>
+                          gulla chutiya hai gulla chutiya hai gulla chutiya hai gulla chutiya tha aur gulla chutiya rhega
+                      </p>
+                      <p>
+                          sab ke sab chutiye hai kaha bhadwo ke beech mai fas gya hun maisab ke sab chutiye hai kaha bhadwo ke beech mai fas gya hun maisab ke sab chutiye hai kaha bhadwo ke beech mai fas gya hun maisab ke sab chutiye hai kaha bhadwo ke beech mai fas gya hun maisab ke sab chutiye hai kaha bhadwo ke beech mai fas gya hun maisab ke sab chutiye hai kaha bhadwo ke beech mai fas gya hun maisab ke sab chutiye hai kaha bhadwo ke beech mai fas gya hun maisab ke sab chutiye hai kaha bhadwo ke beech mai fas gya hun mai'
+                       </p>
+                `,
+    },
+    'article-three' : {
+        title: 'Article three:Mayank Dobriyal',
+        heading:'Article THREE  ',
+        date:'18 August,2017',
+        content:` <p>
+                          this is Article Three
+                      </p>
+                      <p>
+                          gulla chutiya hai gulla chutiya hai gulla chutiya hai gulla chutiya tha aur gulla chutiya rhega
+                      </p>
+                      <p>
+                          sab ke sab chutiye hai kaha bhadwo ke beech mai fas gya hun maisab ke sab chutiye hai kaha bhadwo ke beech mai fas gya hun maisab ke sab chutiye hai kaha bhadwo ke beech mai fas gya hun maisab ke sab chutiye hai kaha bhadwo ke beech mai fas gya hun maisab ke sab chutiye hai kaha bhadwo ke beech mai fas gya hun maisab ke sab chutiye hai kaha bhadwo ke beech mai fas gya hun maisab ke sab chutiye hai kaha bhadwo ke beech mai fas gya hun maisab ke sab chutiye hai kaha bhadwo ke beech mai fas gya hun mai'
+                       </p>
+                `,
+    },
 };
 function createTemplate(data){
     var title=data.title;
@@ -60,19 +92,11 @@ var htmlTemplate =`
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
-app.get('/article-one',function(req,res){
- res.sendFile(path.join(__dirname,'ui','article-one.html'));
+app.get('/:articleName',function(req,res){
+    var articleName = req.parass.articleName;
+ res.send(createTemplate(articles[articleName]));
 });
 
-app.get('/article-two',function(req,res){
- res.send(createTemplate(articleOne));
-});
-app.get('/article-three',function(req,res){
- res.send('Article one requested and will be served here');
-});
-app.get('/page-three',function(req,res){
-    res.send('this is page three requested and ustice will be served  so page thrre wil be requested here this is new webapp nod server spo just shut up ');
-});
 
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
