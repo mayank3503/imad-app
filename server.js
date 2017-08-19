@@ -5,11 +5,11 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-var articleOne= {
-    title: 'Article One:Mayank Dobriyal';
-    heading:'Article One';
-    date:'18 August,2017';
-    content:' <p>
+var articleOne = {
+    title: 'Article One:Mayank Dobriyal',
+    heading:'Article One',
+    date:'18 August,2017',
+    content:` <p>
                       this is Article One
                   </p>
                   <p>
@@ -18,15 +18,15 @@ var articleOne= {
                   <p>
                       sab ke sab chutiye hai kaha bhadwo ke beech mai fas gya hun maisab ke sab chutiye hai kaha bhadwo ke beech mai fas gya hun maisab ke sab chutiye hai kaha bhadwo ke beech mai fas gya hun maisab ke sab chutiye hai kaha bhadwo ke beech mai fas gya hun maisab ke sab chutiye hai kaha bhadwo ke beech mai fas gya hun maisab ke sab chutiye hai kaha bhadwo ke beech mai fas gya hun maisab ke sab chutiye hai kaha bhadwo ke beech mai fas gya hun maisab ke sab chutiye hai kaha bhadwo ke beech mai fas gya hun mai'
                    </p>
-            ';
-}
+            `,
+};
 function createTemplate(data){
     var title=data.title;
     var heading=data.heading;
     var content=data.content;
     var date=data.date;
 
-var htmlTemplate =
+var htmlTemplate =`
         <html>
         <head>
          <title>
@@ -65,7 +65,7 @@ app.get('/article-one',function(req,res){
 });
 
 app.get('/article-two',function(req,res){
- res.send(createTemplate(articleOne0);
+ res.send(createTemplate(articleOne));
 });
 app.get('/article-three',function(req,res){
  res.send('Article one requested and will be served here');
