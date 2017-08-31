@@ -2,8 +2,8 @@ var button=document.getElementById('counter');
 var counter=0;
 button.onclick = function(){
  
-  var request = new XMLHTTPRequest();
-  request.onreadystatechanged(){
+  var request = new XMLHTTPRequest() ;
+  request.onreadystatechange(){
       if(request===XMLHTTPrequest.DONE){
           if(request.status===200){
               var counter=request.responseText;
