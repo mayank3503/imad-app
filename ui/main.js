@@ -3,10 +3,10 @@ var button=document.getElementById('counter');
 
 button.onclick = function() {
  
-  var request = new XMLHTTPRequest() ;
+  var request = new XMLHttpRequest() ;
   
   request.onreadystatechange = function() {
-      if(request===XMLHTTPrequest.DONE){
+      if(request===XMLHTTPRequest.DONE){
           if(request.status===200){
               var counter=request.responseText;
               var span = document.getElementById('count');
