@@ -12,53 +12,7 @@ var config = {
 var app = express();
 app.use(morgan('combined'));
 
-var articles = {
-    'article-one': {
-        title: 'Article One:Mayank Dobriyal',
-        heading:'Article One',
-        date:'18 August,2017',
-        content:` <p>
-                          this is Article One
-                      </p>
-                      <p>
-                          gulla chutiya hai gulla chutiya hai gulla chutiya hai gulla chutiya tha aur gulla chutiya rhega
-                      </p>
-                      <p>
-                          sab ke sab chutiye hai kaha bhadwo ke beech mai fas gya hun maisab ke sab chutiye hai kaha bhadwo ke beech mai fas gya hun maisab ke sab chutiye hai kaha bhadwo ke beech mai fas gya hun maisab ke sab chutiye hai kaha bhadwo ke beech mai fas gya hun maisab ke sab chutiye hai kaha bhadwo ke beech mai fas gya hun maisab ke sab chutiye hai kaha bhadwo ke beech mai fas gya hun maisab ke sab chutiye hai kaha bhadwo ke beech mai fas gya hun maisab ke sab chutiye hai kaha bhadwo ke beech mai fas gya hun mai'
-                       </p>
-                `,
-    },
-    'article-two': {
-        title: 'Article Two:Mayank Dobriyal',
-        heading:'Article Two',
-        date:'18 August,2017',
-        content:` <p>
-                          this is Article Two
-                      </p>
-                      <p>
-                          gulla chutiya hai gulla chutiya hai gulla chutiya hai gulla chutiya tha aur gulla chutiya rhega
-                      </p>
-                      <p>
-                          sab ke sab chutiye hai kaha bhadwo ke beech mai fas gya hun maisab ke sab chutiye hai kaha bhadwo ke beech mai fas gya hun maisab ke sab chutiye hai kaha bhadwo ke beech mai fas gya hun maisab ke sab chutiye hai kaha bhadwo ke beech mai fas gya hun maisab ke sab chutiye hai kaha bhadwo ke beech mai fas gya hun maisab ke sab chutiye hai kaha bhadwo ke beech mai fas gya hun maisab ke sab chutiye hai kaha bhadwo ke beech mai fas gya hun maisab ke sab chutiye hai kaha bhadwo ke beech mai fas gya hun mai'
-                       </p>
-                `,
-    },
-    'article-three': {
-        title: 'Article three:Mayank Dobriyal',
-        heading:'Article THREE  ',
-        date:'18 August,2017',
-        content:` <p>
-                          this is Article Three
-                      </p>
-                      <p>
-                          gulla chutiya hai gulla chutiya hai gulla chutiya hai gulla chutiya tha aur gulla chutiya rhega
-                      </p>
-                      <p>
-                          sab ke sab chutiye hai kaha bhadwo ke beech mai fas gya hun maisab ke sab chutiye hai kaha bhadwo ke beech mai fas gya hun maisab ke sab chutiye hai kaha bhadwo ke beech mai fas gya hun maisab ke sab chutiye hai kaha bhadwo ke beech mai fas gya hun maisab ke sab chutiye hai kaha bhadwo ke beech mai fas gya hun maisab ke sab chutiye hai kaha bhadwo ke beech mai fas gya hun maisab ke sab chutiye hai kaha bhadwo ke beech mai fas gya hun maisab ke sab chutiye hai kaha bhadwo ke beech mai fas gya hun mai'
-                       </p>
-                `,
-    },
-};
+
 function createTemplate(data){
     var title=data.title;
     var heading=data.heading;
