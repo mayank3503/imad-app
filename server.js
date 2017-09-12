@@ -13,7 +13,7 @@ var config = {
 };
 var app = express();
 app.use(morgan('combined'));
-app.use(bodyparser.json());
+app.use(bodyParser.json());
 
 function hash(input,salt){
   var hashed = crypto.pbkdf2Sync(input,salt,10000,512,'sha512');    
